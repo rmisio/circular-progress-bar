@@ -9,8 +9,8 @@ A javascript circular progress bar widget.  The widget utilizes jQuery, although
 * **$container** - the containing element the progress bar will be appended to
 * **activeColor** - the color of the active part of the progress bar. This is the part that will move as the bar progresses.
 * **inactiveColor** - the 'matte' of the progress bar. This is the part of the progress bar behind the active color (i.e. when the progress is 0 - this part is 100% visible).
-* **innerColor** - this is the color of the inner "hollow" part of the progress bar. The idea is to set this to you page background color. This is bit of a **gotcha!** if you ever want to put the progress bar on a non-solid color background.
-* **initalPercentage** - the initial progress percentage (0-100) of the bar.
+* **innerColor** - this is the color of the inner "hollow" part of the progress bar. The idea is to set this to you page background color. This is bit of a *gotcha!* if you ever wanted to put the progress bar on a non-solid color background.
+* **initalPercentage** - the initial progress percentage (0-100) of the bar
 
 For example:
 
@@ -26,7 +26,7 @@ For example:
 
 ## Gotchas!
 
-The progress bar requires *inline svg* support. Of note, this is abscent in IE8 and lower. You're probably going to want to detect the support and use an alternate progress bar if the support is lacking.
+The progress bar requires *inline svg* support. Of note, this is absent in IE8 and lower. You're probably going to want to detect the support and use an alternate progress bar if the support is lacking.
 
 For example, if using [Modernizer](https://github.com/Modernizr/Modernizr):
 
