@@ -1,6 +1,6 @@
 # circular-progress-bar
 
-![](https://github.com/rmisio/circular-progress-bar/blob/master/example.png)
+![](https://github.com/rmisio/circular-progress-bar/blob/master/example.png?raw=true)
 
 A javascript circular progress bar widget.  The widget utilizes jQuery, although it's not written in the traditional jQuery plugin style. To use, create an instance via the init function (which acts as an object factory):
 
