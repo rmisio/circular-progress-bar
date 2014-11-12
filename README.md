@@ -2,19 +2,28 @@
 
 A javascript circular progress bar widget.  The widget utilizes jQuery, although it's not written in the traditional jQuery plugin style. To use, create an instance via the init function (which acts as an object factory):
 
-    progBar = circularProgressBar.init(radius, width, $container, activeColor, inactiveColor, innerColor, initalPercentage);
+    progBar = circularProgressBar.init(args);
 
-* **radius** - the radius of the progress bar
-* **width** - the width of the progress bar
-* **$container** - the containing element the progress bar will be appended to
-* **activeColor** - the color of the active part of the progress bar. This is the part that will move as the bar progresses.
-* **inactiveColor** - the 'matte' of the progress bar. This is the part of the progress bar behind the active color (i.e. when the progress is 0 - this part is 100% visible).
-* **innerColor** - this is the color of the inner "hollow" part of the progress bar. The idea is to set this to you page background color. This is bit of a *gotcha!* if you ever wanted to put the progress bar on a non-solid color background.
-* **initalPercentage** - the initial progress percentage (0-100) of the bar
+The init method takes an object with the following (optional) arguments:
+
+* **radius** - the radius of the progress bar (default is `150`)
+* **width** - the width of the progress bar (default is `20`)
+* **container** - the containing element the progress bar will be appended to (default is `$()`)
+* **activeColor** - the color of the active part of the progress bar. This is the part that will move as the bar progresses. (default is `orange`)
+* **inactiveColor** - the 'matte' of the progress bar. This is the part of the progress bar behind the active color (i.e. when the progress is 0 - this part is 100% visible). (default is `#d1d1d1`)
+* **innerColor** - this is the color of the inner "hollow" part of the progress bar. The idea is to set this to you page background color. This is bit of a *gotcha!* if you ever wanted to put the progress bar on a non-solid color background. (default is `#ffffff`)
+* **initalPercentage** - the initial progress percentage (0-100) of the bar (default is `0`)
 
 For example:
 
-    progBar = circularProgressBar.init(150, 20, $('#progBarContainer'), 'orange', 'green', '#fff', 25);
+    progBar = circularProgressBar.init({
+      radius: 100, 
+      width: 20,
+      container: $('#progress-bar'),
+      activeColor: 'green',
+      innerColor: 'tomato',
+      initialPercentage: 33
+    });
 
 The following method is available to your instance:
 
