@@ -40,14 +40,7 @@ The progress bar requires *inline svg* support. Of note, this is absent in IE8 a
 For example, if using [Modernizer](https://github.com/Modernizr/Modernizr):
 
     if (Modernizr.inlinesvg) {
-      progBar = circularProgressBar.init({
-        radius: 100, 
-        width: 20,
-        container: $('#progress-bar'),
-        activeColor: 'green',
-        innerColor: 'tomato',
-        initialPercentage: 33
-      });
+      progBar = circularProgressBar.init({ radius: 100 });
     } else {
         // Need to user a different progress bar / spinner
     }
