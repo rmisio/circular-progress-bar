@@ -50,18 +50,23 @@ var circularProgressBar = (function($) {
   }
 
   function init(args) {
+    args = args || {};
+
     var radius = parseInt(args.radius, 10) || 150
-      , $container = args.container || $()
       , width = parseInt(args.width, 10) || 20
+      , $container = args.container ? $(args.container) : $('body')
       , initialPercentage = parseInt(args.initialPercentage, 10)
       , activeColor = args.activeColor || 'orange'
       , inactiveColor = args.inactiveColor || "#d1d1d1"
-      , innerColor = args.innerColor || '#ffffff';
+      , innerColor = args.innerColor || '#ffffff';      
 
     if (!($.isNumeric(radius) && radius > 0)) {
-      throw new Exception('circularProgress : init() : Radius must be a positive number.');
+      throw 'circularProgress : init() - Radius must be a positive number.';
     } else if (!($.isNumeric(width) && width > 0)) {
-      throw new Exception('circularProgress : init() : width must be a positive number.');
+      throw 'circularProgress : init() - width must be a positive number.';
+    } else if (!($container[0] instanceof HTMLElement)) {
+      throw 'circularProgress : init() - The container does not appear to be a' +
+        ' valid HTML element.';
     }
 
     initialPercentage = $.isNumeric(initialPercentage) ? initialPercentage : 0;

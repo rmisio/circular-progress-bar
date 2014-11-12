@@ -8,7 +8,7 @@ The init method takes an object with the following (optional) arguments:
 
 * **radius** - the radius of the progress bar (default is `150`)
 * **width** - the width of the progress bar (default is `20`)
-* **container** - the containing element the progress bar will be appended to (default is `$()`)
+* **container** - the containing element the progress bar will be appended to (default is `$('body')`)
 * **activeColor** - the color of the active part of the progress bar. This is the part that will move as the bar progresses. (default is `orange`)
 * **inactiveColor** - the 'matte' of the progress bar. This is the part of the progress bar behind the active color (i.e. when the progress is 0 - this part is 100% visible). (default is `#d1d1d1`)
 * **innerColor** - this is the color of the inner "hollow" part of the progress bar. The idea is to set this to you page background color. This is bit of a *gotcha!* if you ever wanted to put the progress bar on a non-solid color background. (default is `#ffffff`)
@@ -40,10 +40,14 @@ The progress bar requires *inline svg* support. Of note, this is absent in IE8 a
 For example, if using [Modernizer](https://github.com/Modernizr/Modernizr):
 
     if (Modernizr.inlinesvg) {
-        progBar = circularProgressBar.init(150, 20, $('#progBarContainer'), 'orange', 'green', '#fff', 25);
+      progBar = circularProgressBar.init({
+        radius: 100, 
+        width: 20,
+        container: $('#progress-bar'),
+        activeColor: 'green',
+        innerColor: 'tomato',
+        initialPercentage: 33
+      });
     } else {
         // Need to user a different progress bar / spinner
     }
-
-
-    
